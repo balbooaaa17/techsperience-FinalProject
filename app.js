@@ -132,7 +132,7 @@ app.get("/kontrat/delete/:id", function(req, res) {
 });
 
 
-app.listen(3000, 'localhost', (err)=>{
+app.listen(9000, 'localhost', (err)=>{
   if (err) {
     console.log('Something is wrong '+ err);
     return;
