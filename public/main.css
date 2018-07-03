@@ -1,0 +1,86 @@
+ol {
+	background-color: #ffffff; border-radius: 3px
+}
+
+i {
+/*	background-color: #000000; color: white; border-width: 3px; border-radius: 3px;
+*/}
+
+f {
+	background-color: #3371FF; border-radius: 3px; color: white;
+}
+#kosova{
+
+	background-color: blue;
+    border: none;
+    color: white;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+  margin: 14px 2px;
+    cursor: pointer;
+}
+
+#printi{
+
+	color:green;
+	background-color: white;
+
+}
+#arrow{
+
+color:grey;
+	background-color: white;
+    font-size: 1.5em;
+
+
+}
+
+#editi{
+
+	color:orange;
+	background-color: white;
+
+}
+
+#fshije{
+
+	color:red;
+	background-color: white;
+
+}
+
+#mbrapa{
+
+	color:blue;
+	background-color: white;
+}
+
+#shiko{
+
+	color:green;
+	background-color: white;
+    font-size: 1.3em;
+}
+
+/* Change the link color on hover */
+
+
+#editi1{
+
+	color:orange;
+	background-color: white;
+	    font-size: 1.3em;
+
+}
+#fshije1{
+
+	color:red;
+	background-color: white;
+	    font-size: 1.3em;
+
+}
+
+

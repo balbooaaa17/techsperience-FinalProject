@@ -1,0 +1,127 @@
+<% include partials/header.ejs %>
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> 
+  <link rel="stylesheet" type="text/css" href="/main.css">
+  <meta charset="UTF-8"> 
+  <title>Kontratat e Komunes - 2018 </title>
+  </head>
+<body>
+<div class="container">
+      <div class="form-row">
+          <div class="form-group col-md-6">
+            <h1 style="color: #007fdb;"><b>Ndryshoni Kontraten </b></h1>
+          </div>
+          <div class="form-group col-md-6">
+              <img src="/kacanik.svg" width="100px" align="right">
+          </div>
+      </div>
+	<form method="POST" action="/kontrat/update/<%= doc._id %>">
+<div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="formGroupExampleInput" >Nr rendor i prokurorimit</label>
+              <input type="text" class="form-control"   placeholder="Nr rendor i prokurorimit" name="title" value="<%= doc.title %>" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="formGroupExampleInput">Lloji i prokurorimit</label>
+              <input type="text" class="form-control" placeholder="Lloji i prokurorimit" name="description" value="<%= doc.description %>" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput">Aktiviteti i prokurorimit</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" name="aktiviteti" placeholder="Aktiviteti i prokurorimit" value="<%= doc.aktiviteti %>" required>
+          </div>
+          <!-- perfundon Prokurorimi -->
+          <br>
+
+          <!-- Ketu fillojn Datat -->
+          <h3>Datat:</h3>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="formGroupExampleInput">Data e inicimit te aktivitetit</label>
+                  <input class="form-control" type="date"  name="dataInicimit" id="example-date-input" value="<%= doc.dataInicimit %>" required >
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="formGroupExampleInput">Data e publikimit te shpalljes</label>
+                  <input class="form-control" type="date"  name="publikimiShpalljes" id="example-date-input" value="<%= doc.publikimiShpalljes %>" required>
+              </div>
+            </div>
+          
+          <div class="form-group">
+            <label for="formGroupExampleInput">Data e nenshkrimit te kontrates</label>
+            <input class="form-control" type="date"  name="dataNenshkrimit" id="example-date-input" value="<%= doc.dataNenshkrimit %>" required>
+          </div>
+          <br>
+          <h6>Afatet per implementim te kontrates</h6>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+                <input class="form-control" type="date"  name="afatetPerImplementim" id="example-date-input" value="<%= doc.afatetPerImplementim %>" required>
+            </div>
+          <div class="form-group col-md-6">
+                <input class="form-control" type="date"  name="afatetetPerImplementim1" id="example-date-input" value="<%= doc.afatetPerImplementim1 %>" required>
+          </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="formGroupExampleInput">Data e permbylljes se kontrates (data e pranimit te perkohshem / preliminar)</label>
+            <input class="form-control" type="date"  name="dataPermbylljes" id="example-date-input" value="<%= doc.dataPermbylljes %>" required>
+          </div>
+          <!-- Datat perfundojne -->
+          <br>
+
+          <!-- Fillon CMIMET-->
+          <h3>Çmimi dhe të dhëna të tjera:</h3>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="formGroupExampleInput">Çmimi i kontratës (pershirë të gjitha taksat)</label>
+              <input type="text" class="form-control" name="cmimiKontrates"  placeholder="Çmimi i kontratës" value="<%= doc.cmimiKontrates %>" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="formGroupExampleInput">Çmimi total i paguar per kontrat</label>
+              <input type="type" class="form-control" name="cmimiTotalipaguar" placeholder="Çmimi total" value="<%= doc.cmimiTotalipaguar %>" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput">Emri i te cilit i eshte dhene kontrata</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" name="emriiKontratDhenesit" placeholder="Emri dhe mbiemri" value="<%= doc.emriiKontratDhenesit %>" required>
+          </div>
+          <!-- Perfundon CMIMET-->
+
+          <br>
+
+          <!-- Submit and erase - START -->
+          <div class="form-group">
+            <div class="col-xs-12 text-center">
+            		<button class="btn btn-success btn-md" type="submit">Ruaje Kontraten e ndryshuar</button>	
+
+            		<a class="btn btn-warning btn-md" href="javascript:history.go(-1)" title="Return to the previous page" >Kthehu mbrapa</a>
+                <script type="text/javascript">function goBack()</script>	
+
+            		<a class="btn btn-danger btn-md" href="/kontrat/delete/<%= doc._id %> " onclick="return confirm('A jeni i sigurt qe deshironi e fshini kontraten ? Ky hap eshte i pakthyeshem ! ');"">Fshije kontraten</a>
+            </div>
+          </div>
+          <!-- Submit and Erase - END  -->
+			<br>
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; balbooaaa17 - 2018 - TECHSPERIENCE </p>
+    </footer>
+		</div>
+</body>
+</form>
+</div>
+
+
+
+
+
+
+
+
+
+
+

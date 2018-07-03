@@ -1,0 +1,184 @@
+<% include partials/header.ejs %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/main.css">
+  <script type="text/javascript" src="/javascript.js"></script>
+  <title>Kontratat - 2018 </title>
+</head>
+<body>
+  <div class="container">
+    <ul class="nav nav-pills " id="myTab" role="tablist">
+
+
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="pill" href="#home" role="tab" aria-controls="home" aria-selected="true">Kontratat Aktive</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="pill" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Shto Kontrate të re</a>
+      </li>
+
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="form-row">
+          <div class="form-group col-md-6">
+            <h1 style="color: #007fdb;"><b></b></h1>
+          </div>
+          <div class="form-group col-md-6">
+             <!-- <img src="kacanik.svg"  height="85px" align="right"> -->
+
+          </div>
+      </div><br>
+
+ 
+<div class="form-row">
+<div class="form-group col-md-5">
+<input class="form-control mr-sm-4" id="myInput" type="search" placeholder="Kërkoni kontratën sipas numrit rendor apo emrit .... ">
+    </div>
+
+
+    </div>
+   
+    <% docs.map((doc) => { %><p></p><% }); %>
+    <ol class="list-styled" id="myUL">
+      <% docs.map((doc) => { %>
+      <hr>
+
+      <div class="form-row">
+        <div class="form-group col-md-10"> 
+          <li><i> &nbsp  Nr rendor i prokurorimit: </i> <f> &nbsp&nbsp<%= doc.title %>&nbsp </f> &nbsp <i class= "fas fa-arrow-circle-right -o " id="arrow"></i> &nbsp<i>Emri</i> : <f>&nbsp  <%=doc.emriiKontratDhenesit%>&nbsp&nbsp</f>
+        </div> 
+        <a class="far fa-eye fa-1x" id ="shiko" href="/kontrat/<%= doc._id%>"></a> <p> &nbsp</p> &nbsp&nbsp&nbsp&nbsp
+        <a class="fas fa-edit fa-1x" id ="editi1" href="/kontrat/edit/<%= doc._id %>"> </a> <p> &nbsp </p>&nbsp&nbsp&nbsp&nbsp
+        
+        <a class="fa fa-trash -o fa-1x" id="fshije1" href="/kontrat/delete/<%= doc._id %>" onclick="return confirm('A jeni i sigurt qe deshironi te fshini kontraten ? Ky hap eshte i pakthyeshem ! ');"> </a>
+
+
+      <hr>
+      </div> <br>
+      <% }); %>
+    </ol>
+    <hr>
+    
+      </div>
+      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="form-row">
+          <div class="form-group col-md-6"> <br>
+            
+          </div>
+          <div class="form-group col-md-6">
+              <img src="kacanik.svg" width="100px" align="right">
+          </div>
+      </div>
+        <!-- Prokurorimi -->
+        <h3> Prokurorimi </h3>
+
+<form method="POST" action="/kontrat/add"> <!-- Fillimi i Form -->
+
+        <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="formGroupExampleInput" >Nr rendor i prokurorimit</label>
+                    <input type="text" class="form-control"   placeholder="Nr rendor i prokurorimit" name="title" required>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="formGroupExampleInput">Lloji i prokurorimit</label>
+                    <input type="txet" class="form-control" placeholder="Lloji i prokurorimit" name="description" required>
+                  </div>
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput">Aktiviteti i prokurorimit</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" name="aktiviteti" placeholder="Aktiviteti i prokurorimit" required>
+          </div>
+          <!-- Ketu perfundon prokurorimi -->
+          <br>
+
+          <!-- Datat -->
+          <h3>Datat:</h3>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="formGroupExampleInput">Data e inicimit te aktivitetit</label>
+                  <input class="form-control" type="date"  name="dataInicimit" id="example-date-input" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="formGroupExampleInput">Data e publikimit te shpalljes</label>
+                  <input class="form-control" type="date"  name="publikimiShpalljes" id="example-date-input" required>
+              </div>
+            </div>
+          
+          <div class="form-group">
+            <label for="formGroupExampleInput">Data e nenshkrimit te kontrates</label>
+            <input class="form-control" type="date"  name="dataNenshkrimit" id="example-date-input" required>
+          </div>
+          <br>
+          <h6>Afatet per implementim te kontrates</h6>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+                <input class="form-control" type="date"  name="afatetPerImplementim" id="example-date-input" required>
+            </div>
+          <div class="form-group col-md-6">
+                <input class="form-control" type="date"  name="afatetPerImplementim1" id="example-date-input" required>
+          </div>
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput">Data e permbylljes se kontrates (data e pranimit te perkohshem / preliminar)</label>
+            <input class="form-control" type="date"  name="dataPermbylljes" id="example-date-input" required>
+          </div>
+          <!-- Ketu perfundojn datat -->
+          <br>
+
+          <!-- Cmimet -->
+          <h3>Çmimi dhe të dhëna të tjera:</h3>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="formGroupExampleInput">Çmimi i kontratës (pershirë të gjitha taksat)</label>
+              <input type="text" class="form-control" name="cmimiKontrates"  placeholder="Çmimi i kontratës" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="formGroupExampleInput">Çmimi total i paguar per kontrat</label>
+              <input type="type" class="form-control" name="cmimiTotalipaguar" placeholder="Çmimi total" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput">Emri i te cilit i eshte dhene kontrata</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" name="emriiKontratDhenesit" placeholder="Emri dhe mbiemri" required>
+          </div>
+          <!-- Ketu perfundojn cmimet-->
+
+          <br>
+
+         <div class="row">
+                        <div class="col-md-6 text-center">
+                            <button class="btn btn-success form-control">DERGO</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button type="reset" class="btn btn-danger form-control" onclick="return confirm('A jeni i sigurt qe deshironi e fshini kontraten ? Ky hap eshte i pakthyeshem ! ');">FSHIJ</button>
+                        </div>
+                    </div>
+          <!-- Ketu perfundon Dergo dhe Fshij -->
+
+      <br><br>
+    </form> <!--Mbarimi i Form -->
+ <input type="button" class="btn btn-warning" id="kosova" value="<-- Kthehu prapa" onclick="location.href = '/';">
+
+      </div>
+    </div>
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; balbooaaa17 - 2018 - TECHSPERIENCE </p>
+    </footer>
+  </div>
+
+
+</body>
+</html>
+<% include partials/footer.ejs %>

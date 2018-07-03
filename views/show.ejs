@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html moznomarginboxes mozdisallowselectionprint>
+  <head>
+
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+
+
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> <!-- Lidhja me bootstrap -->
+  <link rel="stylesheet" type="text/css" href="/main.css">
+  <meta charset="UTF-8"> 
+  <title>Kontratat</title>
+  </head>
+<body>
+<div class="container">
+      <div class="form-row">
+          <div class="form-group col-md-6"><br>
+            <h1 style="color: #000000;"><b>Kontrata me numer : <%= doc.title %> </b></h1>
+          </div>
+          <div class="form-group col-md-6">
+              <img src="/kacanik.svg" width="100px" align="right">
+          </div>
+      </div>
+
+<table class="table" style="border: 10px solid black;">
+  <tr>
+    <th scope="col">Nr rendor i prokurorimit</th>
+    <td scope="row"><%= doc.title %></td>
+  </tr>
+  <tr>
+    <th>Lloji i prokurorimit</th>
+    <td><%= doc.description %></td>
+  </tr>
+  <tr>
+    <th>Aktiviteti i prokurorimit</th>
+    <td><%= doc.aktiviteti %></td>
+  </tr>
+  <tr>
+    <th>Data e inicimit te aktivitetit</th>
+    <td><%= doc.dataInicimit %></td>
+  </tr>
+  <tr>
+    <th>Data e publikimit të shpalljes</th>
+    <td><%= doc.publikimiShpalljes %></td>
+  </tr>
+  <tr>
+    <th>Data e nënshkrimit të kontratës</th>
+    <td><%= doc.dataNenshkrimit %></td>
+  </tr>
+  <tr>
+    <th>Afatet për implementim te kontratës</th>
+    <td><%= doc.afatetPerImplementim %> - <%= doc.afatetPerImplementim1 %></td>
+  </tr>
+  <tr>
+    <th>Data e përmbylljes së kontratës <br>(Data e pranimit të përkohshëm / preliminar)</th>
+    <td><%= doc.dataPermbylljes %></td>
+  </tr>
+  <tr>
+    <th>Çmimi i kontratës (përshirë të gjitha taksat)</th>
+    <td><%= doc.cmimiKontrates %></td>
+  </tr>
+  <tr>
+    <th>Çmimi total i paguar per kontratën</th>
+    <td><%= doc.cmimiTotalipaguar %></td>
+  </tr>
+    <tr>
+  <th>Emri i të cilit i është dhënë kontrata</th>
+    <td><%= doc.emriiKontratDhenesit %></td>
+  
+ </table>
+
+<hr>
+<button class="fas fa-long-arrow-alt-left fa-2x" id="mbrapa" onclick="goBack()"></button><script type="text/javascript">function goBack() { window.history.back(); }</script> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<button class="fas fa-print fa-2x" id ="printi"  onclick="myFunction()"></button><script type="text/javascript">function myFunction() {window.print();}</script>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+ <a class="fas fa-edit fa-2x" id ="editi" href="/kontrat/edit/<%= doc._id %>"></a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<a class="fa fa-trash -o fa-2x" id="fshije" href="/kontrat/delete/<%= doc._id %>" onclick="return confirm('A jeni i sigurt qe deshironi e fshini kontraten ? Ky hap eshte i pakthyeshem ! ');"></a>
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; balbooaaa17 - 2018 - TECHSPERIENCE </p>
+    </footer>
+</div>
+<br>
+</body>
