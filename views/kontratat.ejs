@@ -1,0 +1,136 @@
+<% include partials/header.ejs %>
+
+<html>
+<head>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/main.css">
+  <script type="text/javascript" src="/javascript.js"></script>
+</head>
+
+<style>
+table, th, td {
+    border: 0.5px solid black;
+    border-collapse: collapse;
+
+
+}
+td {
+  text-align: center;
+
+
+}
+th {
+  text-align: center;
+
+}
+div {
+    display: table;
+}
+p{
+  
+  margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+th { 
+
+background:#eee; 
+
+
+}
+.table > tbody > tr > td {
+     vertical-align: middle;
+}
+
+</style>
+
+
+<body> 
+
+
+<div class="container">
+<div class="row">
+<p class="btn btn-danger btn-responsive btn-md disabled" > Informatat e pergjithshme per Kontratat Aktuale </p>
+</div>
+</div>
+
+<br>
+
+
+<!-- <div class="container"> -->
+
+ <% docs.map((doc)=>
+
+{%>
+
+
+         
+<table style='margin:0px;'  class="table">
+
+  <tr>
+
+
+    <th >Nr rendor i prokurorimit</th>
+    <th >Lloji i prokurorimit</th>
+    <th>Aktiviteti i prokurorimit</th>
+    <th>Data e inicimit te aktivitetit</th>
+    <th>Data e publikimit të shpalljes</th>
+    <th>Data e nënshkrimit të kontratës</th>
+    <th>Afatet për implementim te kontratës</th>
+    <th>Data e përmbylljes së kontratës</th>
+    <th>Çmimi i kontratës (përshirë të gjitha taksat)</th>
+    <th>Çmimi total i paguar per kontratën</th>
+    <th >Emri i të cilit i është dhënë kontrata</th>
+
+  </tr>
+
+
+ 
+  <tr>
+    <td ><%= doc.title %></td>
+    <td><%= doc.description %></td>
+    <td><%= doc.aktiviteti %></td>
+    <td><%= doc.dataInicimit %></td>
+        <td><%= doc.publikimiShpalljes %></td>
+
+    <td><%= doc.dataNenshkrimit %></td>
+
+    <td><%= doc.afatetPerImplementim %> <i> <br>deri me</i> <br> <%= doc.afatetPerImplementim1 %></td>
+    <td><%= doc.dataPermbylljes %></td>
+
+    <td><%= doc.cmimiKontrates %></td>
+
+    <td><%= doc.cmimiTotalipaguar %></td>
+    <td><%= doc.emriiKontratDhenesit %></td>
+
+<td><a class="far fa-eye fa-1x" id ="shiko" href="/kontrat/<%= doc._id%>"></a> <p> </p> 
+</td>
+<td><a class="fas fa-edit fa-1x" id ="editi1" href="/kontrat/edit/<%= doc._id %>"> </a> <p></p></td>
+<td><a class="fa fa-trash -o fa-1x" id="fshije1" href="/kontrat/delete/<%= doc._id %>" onclick="return confirm('A jeni i sigurt qe deshironi te fshini kontraten ? Ky hap eshte i pakthyeshem ! ');"></a>&nbsp </td>
+
+   
+      <br> 
+      <% }); %>
+    </ol>
+  </tr>
+</table>
+
+
+</table><br>
+ <input type="button" class="btn btn-warning" id="kosova" value="<-- Kthehu prapa" onclick="location.href = '/';">
+</div>
+
+<footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; balbooaaa17 - 2018 - TECHSPERIENCE </p>
+    </footer>
+
+</body>
+</html>

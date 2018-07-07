@@ -1,0 +1,18 @@
+{
+  "name": "A",
+  "version": "1.0.0",
+  "description": "AA",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha || true"
+  },
+  "author": "Astrit Krasniqi",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.9",
+    "express": "^4.16.3",
+    "mocha": "^5.2.0",
+    "mongodb": "^2.2.33",
+    "should": "^13.2.1"
+  }
+}
