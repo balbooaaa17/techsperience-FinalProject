@@ -1,4 +1,4 @@
-[![alt text ](http://opendatakosovo.org/assets/img/odk-new-logo.png)](http://opendatakosovo.org/)
+[![alt text ](http://opendatakosovo.org/assets/img/odk-new-logo.png)
 
 
 [![Build Status](https://travis-ci.com/balbooaaa17/techsperience-FinalProject.svg?branch=master)](https://travis-ci.com/balbooaaa17/techsperience-FinalProject)

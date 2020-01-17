@@ -4,14 +4,11 @@ const app = express();
 const ejs = require("ejs");
 const path = require("path");
 
-
-
-
 // MongoDB setup code 
 const MongoClient = require("mongodb").MongoClient;
 const DB_URI = "mongodb://localhost:27017/kontratat"; //mongodb URL 
 const router = express.Router();
-const fs = require("fs");
+//const fs = require("fs");
 const bodyParser = require("body-parser");
 const ObjectID = require("mongodb").ObjectID;
 
@@ -140,7 +137,7 @@ app.get("/kontrat/delete/:id", function(req, res) {
 });
 
 
-app.listen(3000, 'localhost', (err)=>{
+app.listen(3000,'192.168.193.153', (err)=>{
   if (err) {
     console.log('Something is wrong '+ err);
     return;
