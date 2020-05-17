@@ -146,4 +146,8 @@ app.listen(3000,'127.0.0.1', (err)=>{
 })
 
 
+app.get("/", function (req, res) {
+         return res.send("Hello World");
+	     });
 
+module.exports = app;

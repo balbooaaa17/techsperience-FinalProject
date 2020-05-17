@@ -4,7 +4,7 @@
   "description": "AA",
   "main": "app.js",
   "scripts": {
-    "test": "mocha || true"
+    "test": "mocha ./test/* --exit"
   },
   "author": "Astrit Krasniqi",
   "dependencies": {
@@ -12,10 +12,13 @@
     "ejs": "^2.7.4",
     "express": "^4.17.1",
     "https": "^1.0.0",
-    "mocha": "^5.2.0",
     "minimist": ">=0.2.1",
     "mongodb": "^2.2.36",
     "npm-check-updates": "^6.0.1",
     "should": "^13.2.3"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "supertest": "^4.0.2"
   }
 }
