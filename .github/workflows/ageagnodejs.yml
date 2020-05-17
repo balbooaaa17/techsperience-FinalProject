@@ -27,5 +27,5 @@ jobs:
         mongodb-version: ${{ matrix.mongodb-version }}
         mongodb-replica-set: insert-replica-set-name
     - run: npm ci
-    - run: npm run build --if-present
+    - run: node app.js
     - run: curl http://localhost:3000
