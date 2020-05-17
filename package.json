@@ -9,11 +9,12 @@
   "author": "Astrit Krasniqi",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "ejs": "^2.6.1",
+    "ejs": "^2.7.4",
     "express": "^4.17.1",
     "https": "^1.0.0",
     "mocha": "^5.2.0",
     "mongodb": "^2.2.36",
+    "npm-check-updates": "^6.0.1",
     "should": "^13.2.3"
   }
 }

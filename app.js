@@ -137,7 +137,7 @@ app.get("/kontrat/delete/:id", function(req, res) {
 });
 
 
-app.listen(3000,'192.168.193.153', (err)=>{
+app.listen(3000,'127.0.0.1', (err)=>{
   if (err) {
     console.log('Something is wrong '+ err);
     return;
