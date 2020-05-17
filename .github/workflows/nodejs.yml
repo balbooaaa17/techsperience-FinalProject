@@ -26,5 +26,5 @@ jobs:
         mongodb-replica-set: insert-replica-set-name
 
     - run: npm install
-
+    - run: node app.js
     - run: curl localhost:3000
