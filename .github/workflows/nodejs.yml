@@ -27,14 +27,14 @@ jobs:
 
     - run: npm install
     - run: node app.js
+    - run: curl http://localhost:3000
 
-
-  curl:
-    runs-on: ubuntu-latest
-    steps:
-    - name: curl
-      uses: wei/curl@master
-      with:
-        args: http://localhost:3000
+ # curl:
+   # runs-on: ubuntu-latest
+    #steps:
+    #- name: curl
+    #  uses: wei/curl@master
+    #  with:
+     #   args: http://localhost:3000
 
 
