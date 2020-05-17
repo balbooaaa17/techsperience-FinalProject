@@ -7,8 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [8.x, 10.x, 12.x, 13.x]
-        mongodb-version: [4.0, 4.2]
+        node-version: [8.x]
+        mongodb-version: [4.0]
 
     steps:
     - name: Git checkout
@@ -27,4 +27,14 @@ jobs:
 
     - run: npm install
     - run: node app.js
-    - run: curl localhost:3000
+on: push
+jobs:
+  curl:
+    runs-on: ubuntu-latest
+    steps:
+    - name: curl
+      uses: wei/curl@master
+      with:
+        args: http://localhost:3000
+
+
