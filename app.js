@@ -7,6 +7,8 @@ const path = require("path");
 // MongoDB setup code 
 const MongoClient = require("mongodb").MongoClient;
 const DB_URI = "mongodb://localhost:27017/kontratat"; //mongodb URL 
+let kontratatekomunes; // Declare globally
+
 const router = express.Router();
 //const fs = require("fs");
 const bodyParser = require("body-parser");
