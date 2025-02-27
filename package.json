@@ -4,6 +4,7 @@
   "description": "AA",
   "main": "app.js",
   "scripts": {
+ "test": "mocha ./test/* --exit"
   },
   "author": "Astrit Krasniqi",
   "dependencies": {
