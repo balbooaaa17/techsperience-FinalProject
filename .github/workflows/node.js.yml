@@ -24,7 +24,7 @@ jobs:
           cache: 'npm'
           
       - name: Install dependencies
-        run: rm package-lock.json && npm ci
+        run: rm package-lock.json && npm install
       
       - name: Install dependencies
         run:  npm audit fix --force
