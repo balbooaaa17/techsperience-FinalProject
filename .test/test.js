@@ -4,7 +4,7 @@ const request = require('supertest');
 const sinon = require('sinon');
 const { MongoMemoryServer } = require('mongodb-memory-server');
 const { MongoClient } = require('mongodb');
-const app = require('../index'); // Assuming your main file is index.js
+const app = require('../app'); // Assuming your main file is app.js
 
 describe('Kontratat API Tests', function() {
   let mongoServer;
