@@ -1,7 +1,9 @@
-const chai = require('chai');
-const expect = chai.expect;
 const request = require('supertest');
 const sinon = require('sinon');
+//const chai = require('chai');
+//const expect = chai.expect;
+import chai from 'chai';
+
 const { MongoMemoryServer } = require('mongodb-memory-server');
 const { MongoClient } = require('mongodb');
 const app = require('../app'); // Assuming your main file is app.js
