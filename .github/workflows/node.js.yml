@@ -25,9 +25,12 @@ jobs:
           
       - name: Install dependencies
         run: rm package-lock.json && npm install 
+
+      - name: echo 
+        run: echo "done xD" 
       
-      - name: Install dependencies
-        run:  npm audit fix --force
+     # - name: Install dependencies
+     #   run:  npm audit fix --force
        
         
     # - name: Run tests
