@@ -1,7 +1,7 @@
 <!--- #![alt text ](https://milanoschool.org/wp-content/uploads/2015/04/ODK-Logo-540x3201.jpg) -->
 
 
-#[![Build Status](https://travis-ci.com/balbooaaa17/techsperience-FinalProject.svg?branch=master)](https://travis-ci.com/balbooaaa17/techsperience-FinalProject)
+<!--- #[![Build Status](https://travis-ci.com/balbooaaa17/techsperience-FinalProject.svg?branch=master)] (https://travis-ci.com/balbooaaa17/techsperience-FinalProject) -->
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # How to try it in your environment :computer:
