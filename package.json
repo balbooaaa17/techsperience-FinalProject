@@ -4,6 +4,7 @@
   "description": "AA",
   "main": "app.js",
   "scripts": {
+  "test": "node test-mongo.js"
   },
   "author": "Astrit Krasniqi",
   "dependencies": {
