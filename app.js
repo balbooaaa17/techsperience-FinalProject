@@ -133,7 +133,7 @@ async function start() {
 
     // Start server
     app.listen(8080, () => {
-      console.log("Server is running on port 3000");
+      console.log("Server is running on port 8080");
     });
   } catch (err) {
     console.error("Failed to connect to MongoDB", err);
