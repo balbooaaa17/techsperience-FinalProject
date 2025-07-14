@@ -1,37 +1,41 @@
-name: Node.js Testaaaaaa
+name: Node.js CI with MongoDB
 
 on:
   push:
-    branches: [ master ]
+    branches: [main, master]
   pull_request:
-    branches: [ master ]
+    branches: [main, master]
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-22.04
 
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [20.19.3]
+        mongodb-version: ['8.0.11']
 
     steps:
-      - uses: actions/checkout@v3
-      
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-          
-      - name: Install dependencies
-        run: rm package-lock.json && npm install 
 
-      - name: echo 
-        run: echo "done xD" 
-      
-     # - name: Install dependencies
-     #   run:  npm audit fix --force
-       
-        
-    # - name: Run tests
-     #   run: npm test
+      - name: Start MongoDB ${{ matrix.mongodb-version }}
+        uses: step-security/mongodb-github-action@v1
+        with:
+          mongodb-version: ${{ matrix.mongodb-version }}
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+        env:
+          CI: true
+          # Add any other env vars your tests need here, e.g.:
+          MONGODB_URI: mongodb://localhost:27017/your-db-name
+
