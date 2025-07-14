@@ -14,7 +14,7 @@ Mongod - 8.0.11
     git clone https://github.com/balbooaaa17/techsperience-FinalProject.git
     cd techsperience-FinalProject
     type npm install on your terminal  
-    type mongod (to start MongoDB) 
+    Start MongoDB (ubuntu - sudo systemctl start mongod) 
     node app.js- (to start Node app) or nodemon 
 
 ####  Access the project at *http://localhost:3000*
