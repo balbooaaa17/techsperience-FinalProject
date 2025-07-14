@@ -1,4 +1,4 @@
-#![alt text ](https://milanoschool.org/wp-content/uploads/2015/04/ODK-Logo-540x3201.jpg)
+<!--- #![alt text ](https://milanoschool.org/wp-content/uploads/2015/04/ODK-Logo-540x3201.jpg) -->
 
 
 #[![Build Status](https://travis-ci.com/balbooaaa17/techsperience-FinalProject.svg?branch=master)](https://travis-ci.com/balbooaaa17/techsperience-FinalProject)
