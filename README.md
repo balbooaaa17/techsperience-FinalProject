@@ -1,11 +1,16 @@
-![alt text ](https://milanoschool.org/wp-content/uploads/2015/04/ODK-Logo-540x3201.jpg)
+#![alt text ](https://milanoschool.org/wp-content/uploads/2015/04/ODK-Logo-540x3201.jpg)
 
 
-[![Build Status](https://travis-ci.com/balbooaaa17/techsperience-FinalProject.svg?branch=master)](https://travis-ci.com/balbooaaa17/techsperience-FinalProject)
+#[![Build Status](https://travis-ci.com/balbooaaa17/techsperience-FinalProject.svg?branch=master)](https://travis-ci.com/balbooaaa17/techsperience-FinalProject)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # How to try it in your environment :computer:
+```
+2025 Tested on : 
+Node 20.19.3
+Mongod - 8.0.11 
 
+```
     git clone https://github.com/balbooaaa17/techsperience-FinalProject.git
     cd techsperience-FinalProject
     type npm install on your terminal  
