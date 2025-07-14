@@ -57,7 +57,7 @@ In the words of Abraham Lincoln:
 
 ---------------------------------------
 
-![alt text](http://techsperience.opendatakosovo.org/images/sm_techsperience.jpg)
+<!--- ![alt text](http://techsperience.opendatakosovo.org/images/sm_techsperience.jpg) -->
 
 </br> </br> </br> 
 
