@@ -1,33 +1,41 @@
+name: Node.js CI with MongoDB
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
 jobs:
   build:
     runs-on: ubuntu-22.04
 
-    steps:
-      - uses: actions/checkout@v4
+    strategy:
+      matrix:
+        node-version: [20.19.3]
+        mongodb-version: ['8.0.11']
 
-      - name: Set up Node.js
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
-          node-version: 20.19.3
+          node-version: ${{ matrix.node-version }}
 
-      - name: Start MongoDB container
-        run: |
-          docker run -d --name mongodb -p 27017:27017 mongo:8.0.11
-          # Wait for MongoDB to be ready
-          for i in {1..30}; do
-            if mongo --eval "db.adminCommand('ping')" &>/dev/null; then
-              echo "MongoDB is ready"
-              break
-            fi
-            echo "Waiting for MongoDB to start..."
-            sleep 2
-          done
+      - name: Start MongoDB ${{ matrix.mongodb-version }}
+        uses: supercharge/mongodb-github-action@v1
+        with:
+          mongodb-version: ${{ matrix.mongodb-version }}
 
       - name: Install dependencies
         run: npm install
 
       - name: Run tests
-        env:
-          MONGODB_URI: mongodb://localhost:27017/kontratat
-          CI: true
         run: npm test
+        env:
+          CI: true
+          # Add any other env vars your tests need here, e.g.:
+          # MONGODB_URI: mongodb://localhost:27017/your-db-name
+
