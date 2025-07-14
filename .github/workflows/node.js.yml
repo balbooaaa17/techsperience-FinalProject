@@ -33,9 +33,7 @@ jobs:
         run: npm install
 
       - name: Run tests
-        run: npm test
         env:
           CI: true
-          # Add any other env vars your tests need here, e.g.:
-          # MONGODB_URI: mongodb://localhost:27017/your-db-name
-
+          MONGODB_URI: mongodb://localhost:27017/kontratat
+        run: npm test
