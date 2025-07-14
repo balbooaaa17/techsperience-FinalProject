@@ -2,6 +2,7 @@
 
 
 <!--- #[![Build Status](https://travis-ci.com/balbooaaa17/techsperience-FinalProject.svg?branch=master)] (https://travis-ci.com/balbooaaa17/techsperience-FinalProject) -->
+[![Node.js CI with MongoDB](https://github.com/balbooaaa17/techsperience-FinalProject/actions/workflows/node.js.yml/badge.svg)](https://github.com/balbooaaa17/techsperience-FinalProject/actions/workflows/node.js.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # How to try it in your environment :computer:
