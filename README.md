@@ -20,6 +20,38 @@ Mongod - 8.0.11
 
 ####  Access the project at *http://localhost:8080*
 
+### Docker : 
+- Docker-Compose : 
+```
+
+version: '3.8'
+
+services:
+  app:
+    image: astrkr/nodem:slim
+   # build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/kontratat
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:8.0.11
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_DATABASE=kontratat
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
+```
+
+
+
 
 
 ## *As of right now, it supports these (json) objs*
