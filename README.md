@@ -28,7 +28,7 @@ version: '3.8'
 
 services:
   app:
-    image: astrkr/nodem:slim
+    image: astrkr/nodem:slim2
    # build: .
     ports:
       - "8080:8080"
